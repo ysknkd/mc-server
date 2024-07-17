@@ -1,0 +1,15 @@
+version: '3'
+services:
+  fabric:
+    build: .
+    image: mc-server:latest
+    ports:
+      - "25565:25565"
+    volumes:
+      - mc-server-data:/data
+    container_name: mc-server
+    restart: unless-stopped
+volumes:
+  mc-server-data:
+    external: true
+    name: mc-server-data
