@@ -5,7 +5,7 @@ RUN tdnf install -y curl \
     && rm -rf /var/cache/tdnf
 
 RUN mkdir -p /opt/mc && \
-    curl -o /opt/mc/mc-server.jar https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar
+    curl -o /opt/mc/mc-server.jar https://piston-data.mojang.com/v1/objects/4707d00eb834b446575d89a61a11b5d548d8c001/server.jar
 
 WORKDIR /data
 VOLUME /data

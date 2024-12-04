@@ -41,3 +41,15 @@ start a mc-server
 podman-compose up -d
 ```
 
+## How to version up minecraft server
+
+bump up the version 
+
+```bash
+podman build -t mc-server:latest .
+
+podman-compose down
+podman-compose up -d
+podman-compose logs -f | grep "minecraft server version"
+```
+
