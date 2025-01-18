@@ -41,6 +41,12 @@ start a mc-server
 podman-compose up -d
 ```
 
+link log for monitor
+
+```
+sudo ln -s `podman volume inspect mc-server-data | jq -r '.[].Mountpoint'`/logs/latest.log /var/log/mc-server.log
+```
+
 ## How to version up minecraft server
 
 bump up the version 
