@@ -47,6 +47,27 @@ link log for monitor
 sudo ln -s `podman volume inspect mc-server-data | jq -r '.[].Mountpoint'`/logs/latest.log /var/log/mc-server.log
 ```
 
+## How to install fabric for server
+
+```bash
+MC_VOLUME=$(podman volume inspect mc-server-data | jq -r '.[].Mountpoint')
+MC_VERSION=1.21.4
+MC_LOADER_VERSION=0.16.10
+
+java -jar ./fabric-installer-1.0.1.jar server -dir $MC_VOLUME -mcversion $MC_VERSION -loader $MC_LOADER_VERSION -downloadMinecraft
+```
+
+```bash
+## download a mod to mods directory
+$MC_VOLUME/mods
+```
+
+docker-compose.yaml entrypoint
+
+```
+    entrypoint: [ "java", "-jar", "-Xms7G", "-Xmx7G", "/data/fabric-server-launch.jar", "nogui" ]
+```
+
 ## How to version up minecraft server
 
 bump up the version 

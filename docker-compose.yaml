@@ -9,6 +9,7 @@ services:
       - mc-server-data:/data
     container_name: mc-server
     restart: unless-stopped
+    entrypoint: [ "java", "-jar", "-Xms7G", "-Xmx7G", "/data/fabric-server-launch.jar", "nogui" ]
 volumes:
   mc-server-data:
     external: true

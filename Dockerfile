@@ -12,4 +12,4 @@ VOLUME /data
 
 EXPOSE 25565
 
-ENTRYPOINT [ "java", "-jar", "-Xms6G", "-Xmx6G", "/opt/mc/mc-server.jar", "nogui" ]
+ENTRYPOINT [ "java", "-jar", "-Xms7G", "-Xmx7G", "/opt/mc/mc-server.jar", "nogui" ]
