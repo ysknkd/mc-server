@@ -4,6 +4,7 @@ services:
     build: .
     image: mc-server:latest
     ports:
+      - "19132:19132/udp"
       - "25565:25565"
     volumes:
       - mc-server-data:/data

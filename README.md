@@ -68,6 +68,17 @@ docker-compose.yaml entrypoint
     entrypoint: [ "java", "-jar", "-Xms7G", "-Xmx7G", "/data/fabric-server-launch.jar", "nogui" ]
 ```
 
+### Geyser global link settings
+
+```yaml
+# Configuration for player linking
+player-link:
+  # Whether to enable the linking system. Turning this off will prevent
+  # players from using the linking feature even if they are already linked.
+  enabled: true
+  use-global-linking: true
+```
+
 ## How to version up minecraft server
 
 bump up the version 
