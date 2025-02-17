@@ -3,6 +3,12 @@
 
 Minecraft for rpi.
 
+## Prerequisite
+
+* podman
+* git
+* jq
+
 ## Usage
 
 build a image and create default files.
