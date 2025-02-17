@@ -9,6 +9,7 @@ Minecraft for rpi.
 * podman-compose
 * git
 * jq
+* java(optional)
 
 ## Usage
 
@@ -57,11 +58,8 @@ sudo ln -s `podman volume inspect mc-server-data | jq -r '.[].Mountpoint'`/logs/
 ## How to install fabric for server
 
 ```bash
-MC_VOLUME=$(podman volume inspect mc-server-data | jq -r '.[].Mountpoint')
-MC_VERSION=1.21.4
-MC_LOADER_VERSION=0.16.10
-
-java -jar ./fabric-installer-1.0.1.jar server -dir $MC_VOLUME -mcversion $MC_VERSION -loader $MC_LOADER_VERSION -downloadMinecraft
+curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.16.10/1.0.1/server/jar
+mv fabric-server-mc.1.21.4-loader.0.16.10-launcher.1.0.1.jar $MC_VOLUME/fabric-server-launch.jar
 ```
 
 ```bash
