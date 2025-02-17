@@ -6,6 +6,7 @@ Minecraft for rpi.
 ## Prerequisite
 
 * podman
+* podman-compose
 * git
 * jq
 
